@@ -8,13 +8,13 @@ import sys
 # Lấy đường dẫn đến thư mục chứa file Python đang thực thi
 current_script_dir = os.path.dirname(os.path.abspath(sys.argv[0])) + '\\'
 
-filePaths = [current_script_dir + 'dental.jpg', current_script_dir + 'parrot.jpg', current_script_dir +'skull.jpg']
+filePaths = ['dental.jpg', 'parrot.jpg', 'skull.jpg']
 l = len(filePaths)
 
 for i in range(l):
     filePath = filePaths[i]
     # Load an image
-    image = cv2.imread(filePath, cv2.IMREAD_GRAYSCALE)
+    image = cv2.imread(current_script_dir + filePath, cv2.IMREAD_GRAYSCALE)
     #histigram image
     equalized_image = cv2.equalizeHist(image)
     # Apply adaptive histogram image 8x8
