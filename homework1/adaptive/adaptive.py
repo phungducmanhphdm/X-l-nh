@@ -2,8 +2,13 @@
 #N20DCCN040
 import cv2
 import matplotlib.pyplot as plt
+import os
+import sys
 
-filePaths = ['dental.jpg', 'parrot.jpg', 'skull.jpg']
+# Lấy đường dẫn đến thư mục chứa file Python đang thực thi
+current_script_dir = os.path.dirname(os.path.abspath(sys.argv[0])) + '\\'
+
+filePaths = [current_script_dir + 'dental.jpg', current_script_dir + 'parrot.jpg', current_script_dir +'skull.jpg']
 l = len(filePaths)
 
 for i in range(l):

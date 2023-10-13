@@ -2,9 +2,14 @@
 #N20DCCN040
 import cv2
 import matplotlib.pyplot as plt
+import os
+import sys
+
+# Lấy đường dẫn đến thư mục chứa file Python đang thực thi
+current_script_dir = os.path.dirname(os.path.abspath(sys.argv[0])) + '\\'
 
 #read image
-image = cv2.imread('moon.jpg', cv2.IMREAD_GRAYSCALE)
+image = cv2.imread(current_script_dir + 'moon.jpg', cv2.IMREAD_GRAYSCALE)
 #hình ảnh đã cân bằng sáng
 equalized_image = cv2.equalizeHist(image)
 #Biểu đồ sáng

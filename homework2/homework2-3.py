@@ -1,7 +1,14 @@
+#Phùng Đức Mạnh
+#N20DCCN040
 import cv2
+import os
+import sys
+
+# Lấy đường dẫn đến thư mục chứa file Python đang thực thi
+current_script_dir = os.path.dirname(os.path.abspath(sys.argv[0])) + '\\'
 
 # Đọc hình ảnh màu "lena512color.jpg"
-J1 = cv2.imread("lena512color.jpg")
+J1 = cv2.imread(current_script_dir + "lena512color.jpg")
 
 # Tạo hình ảnh màu mới J2 bằng cách hoán đổi các băng màu
 J2 = J1.copy()

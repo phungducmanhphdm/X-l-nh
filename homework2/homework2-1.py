@@ -2,10 +2,15 @@
 #N20DCCN040
 import numpy as np
 import matplotlib.pyplot as plt
+import os
+import sys
+
+# Lấy đường dẫn đến thư mục chứa file Python đang thực thi
+current_script_dir = os.path.dirname(os.path.abspath(sys.argv[0])) + '\\'
 
 # Đọc hình ảnh Lena và Peppers
-lena = np.fromfile("lenabin.sec", dtype=np.uint8).reshape(256, 256)
-peppers = np.fromfile("peppersbin.sec", dtype=np.uint8).reshape(256, 256)
+lena = np.fromfile(current_script_dir + "lenabin.sec", dtype=np.uint8).reshape(256, 256)
+peppers = np.fromfile(current_script_dir + "peppersbin.sec", dtype=np.uint8).reshape(256, 256)
 # (a) Hiển thị hình ảnh Lena và Peppers
 plt.figure(figsize=(8, 4))
 plt.subplot(1, 2, 1)
